@@ -7,7 +7,7 @@
   <%-include("../partials/flash")%>
     <div class="row" >
         <div class="col col-lg-6 col-md-6 col-sm-12 text-center  mb-3 mt-3">
-            <div class="card p-2 "  >
+            <div class="card p-4 "  >
                 <img src="<%=product.img%>" class="card-img-top  " >
                 <div class="card-body">
                   <h5 class="card-title"><%=product.name%></h5>
@@ -38,7 +38,7 @@
             <h1 style="margin-top: 40px;">Leave a Review</h1>
 
             <form class="needs-validation" action="/products/<%=product._id%>/review" method="POST" style="max-width:70%;"novalidate >
-                <div class="container mt-3 p-2" >
+                <div class="container mt-3 p-4" >
                   <fieldset class="starability-basic">
                     
                     <input type="radio" id="no-rate" class="input-no-rate" name="rating" value="0" checked aria-label="No rating." />
@@ -53,7 +53,7 @@
                     <input type="radio" id="first-rate5" name="rating" value="5" />
                     <label for="first-rate5" title="Amazing">5 stars</label>
                   </fieldset>
-                  <div class="mb-3" style="width: 70vw;">
+                  <div class="mb-3" style="width: 60vw;">
                       <label for="comment" class="form-label">Comment</label>
                       <textarea class="form-control" name="comment" id="comment" cols="30" rows="3"  required></textarea>
                       <div class="invalid-feedback">
