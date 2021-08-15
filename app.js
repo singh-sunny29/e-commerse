@@ -15,9 +15,9 @@ const flash = require('connect-flash');
 const productRoutes = require('./Routes/product');
 const authRoutes = require('./Routes/auth');
 const cartRoutes = require('./Routes/cart');
-const paymentRoutes = require('./routes/payment');
-const userRoutes = require('./routes/user');
-const profileRoutes = require('./routes/profile');
+const paymentRoutes = require('./Routes/payment');
+const userRoutes = require('./Routes/user');
+const profileRoutes = require('./Routes/profile');
 
 //authentication using passport
 const passport = require('passport');
