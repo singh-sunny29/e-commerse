@@ -12,7 +12,7 @@ router.get('/products', async (req, res) =>{
         res.render('products/index',{ products});
     }
     catch(e){
-        console.log("something went wrong");
+//         console.log("something went wrong");
         req.flash('error','Cannot find products');
         res.render('error');
     }
@@ -25,7 +25,7 @@ router.get('/:sellerId/myproducts',isSellerLoggedIn, async(req, res) => {
         const seller=await Seller.findById(req.params.sellerId).populate('products');
         res.render('products/myproduct',{seller}); 
     } catch (e) {
-        console.log("Something Went Wrong");
+//         console.log("Something Went Wrong");
         req.flash('error', 'Cannot Find Products');
         res.render('error');
     }
@@ -52,7 +52,7 @@ router.post('/:sellerId/products',isSellerLoggedIn, async (req,res) =>{
         res.redirect('/products');
     }
     catch (e) {
-        console.log(e.message);
+//         console.log(e.message);
         req.flash('error', 'Cannot Create Products,Something is Wrong');
         res.render('error');
     }
@@ -61,11 +61,11 @@ router.post('/:sellerId/products',isSellerLoggedIn, async (req,res) =>{
 router.get('/products/:id', async (req,res)=>{
     try{
         const product= await (await Product.findById(req.params.id).populate('reviews').populate('seller'));
-        console.log(product);
+//         console.log(product);
         res.render('products/show',{ product });
     }
     catch(e){
-        console.log(e.message);
+//         console.log(e.message);
         req.flash('error','Cannot find product');
         res.render('error');
     }
@@ -81,7 +81,7 @@ router.get('/products/:id/edit', isSpSellerLoggedIn, async(req, res) => {
         res.render('products/edit',{product});
     }
     catch (e) {
-        console.log(e.message);
+//         console.log(e.message);
         req.flash('error', 'Cannot Edit this Product');
         res.redirect('/error');
     }
@@ -96,7 +96,7 @@ router.patch('/products/:id',isSpSellerLoggedIn, async (req,res)=>{
         res.redirect(`/products/${req.params.id}`);
     }
     catch(e){
-        console.log("something went wrong");
+//         console.log("something went wrong");
         req.flash('error','Cannot find product');
         res.render('error');
     }
@@ -109,7 +109,7 @@ router.delete('/products/:id',isSpSellerLoggedIn, async (req, res)=>{
         res.redirect('/products');
     }
     catch(e){
-        console.log("something went wrong");
+//         console.log("something went wrong");
         req.flash('error','Cannot find product');
         res.render('error');
     }
