@@ -4,9 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node ./app.js"
+    "start":"node ./app.js"
   },
-  "author": "Vishal Kumar",
+  "author": "Sunny Kumar",
   "license": "ISC",
   "dependencies": {
     "connect-flash": "^0.1.1",
